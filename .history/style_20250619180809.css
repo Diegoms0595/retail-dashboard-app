@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fefefe;
+  color: #111;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+}
+
+.left-links a,
+.right-icons span {
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.products {
+  display: grid;
+  gap: 30px;
+}
+
+.products.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.products.four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product {
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.center-text {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.philosophy-title {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.philosophy-text {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #666;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 0;
+  overflow-x: auto;
+}
+
+.gallery img {
+  height: 250px;
+  border-radius: 4px;
+}
+
+.footer {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 10px;
+}

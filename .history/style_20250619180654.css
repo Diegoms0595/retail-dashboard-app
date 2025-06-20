@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #111;
+  background-color: #f9f9f9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.icons span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.section {
+  padding: 40px;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.product-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.design-approach {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.design-approach h3 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  overflow-x: auto;
+}
+
+.gallery img {
+  height: 250px;
+  border: 1px solid #ddd;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
