@@ -365,24 +365,3 @@ body {
   font-size: 1.1rem;
   font-weight: 700;
 }
-
-.sidebar-links {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.sidebar-links span {
-  cursor: pointer;
-  padding: 5px 10px;
-  transition: background 0.3s;
-}
-
-.sidebar-links span:hover {
-  background-color: #f0f0f0;
-}
-
-.sidebar-links.show {
-  display: flex;
-}

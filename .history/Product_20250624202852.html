@@ -9,8 +9,8 @@
 </head>
 
 <body>
-  <div id="header"></div> <!-- Moved header div here -->
-  
+ 
+
   <main class="products-main">
     <aside class="filters">
       <button class="menu-icon">&#9776;</button>
@@ -29,9 +29,11 @@
       <div class="filter-group">
         <label>Availability</label>
         <input type="checkbox" id="in-stock" />
+
         <div>
-          <label for="out-stock">Out of Stock</label>
+           <label for="out-stock">Out of Stock</label>
           <input type="checkbox" id="out-stock"/>
+     
         </div>
       </div>
       <div class="filter-group">
@@ -39,7 +41,8 @@
       </div>
       <div class="filter-group">
         <label>Colors</label>
-        <div class="filter-colors"></div>
+        <div class="filter-colors">
+        </div>
       </div>
       <div class="filter-group">
         <label>Price Range</label>
@@ -54,7 +57,6 @@
         <label>Ratings</label>
       </div>
     </aside>
-    
     <section class="products-section">
       <div class="products-header">
         <nav class="breadcrumb">Home / Products</nav>
@@ -113,22 +115,24 @@
       </div>
     </section>
   </main>
+  </div>
+  <div id="header"></div>
+<main>...</main>
+<div id="footer"></div>
 
-  <div id="footer"></div>
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
 
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      });
-
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
-  </script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+</script>
 </body>
 
 </html>

@@ -7,22 +7,39 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="main-nav">
+      <a href="#" class="active">Home</a>
+      <a href="#">Collections</a>
+      <a href="#">New</a>
+    </nav>
+    <div class="top-icons">
+  
+      <button class="icon-btn">
+        <img src="Assets/shopping-cart.png" alt="Cart Icon"></button>
 
-  <div id="header"></div>
+        <button class="icon-btn"><img src="./Assets/magnifying-glass-1083378_1280.png" alt=""></button>
+        
+  </header>
 
+  <!-- Wrapper -->
   <div class="main-wrapper">
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-menu">
-        <span class="menu-icon" id="menuToggle">&#9776;</span>
-        <div class="sidebar-links" id="sidebarLinks">
-          <span>Home</span>
-          <span>PRODUCTS</span>
-          <span>New</span>
-        </div>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-menu">
+      <span class="menu-icon" id="menuToggle">&#9776;</span>
+      <div class="sidebar-links">
+        <span>Home</span>
+        <span>Collections</span>
+        <span>New</span>
       </div>
-    </aside>
+    </div>
+  </aside>
 
+    <!-- Main Content -->
     <main class="main-content">
+      <!-- New Collection -->
       <section class="hero-section">
         <div class="section-header">
           <h1 class="hero-title">NEW<br>COLLECTION</h1>
@@ -35,6 +52,7 @@
         </div>
       </section>
 
+      <!-- New This Week -->
       <section class="week-section">
         <div class="section-header">
           <h2 class="section-title">NEW<br>THIS WEEK <span class="new-badge">NEW</span></h2>
@@ -46,6 +64,7 @@
             <div class="product-price">$199</div>
           </div>
           <div class="week-product">
+            <!-- data img -->
             <img src="Assets/week2.png" alt="White Tee" />
             <div class="product-name">White Tee</div>
             <div class="product-price">$150</div>
@@ -63,11 +82,13 @@
         </div>
       </section>
 
+      <!-- XIV Collections -->
       <section class="collection-section">
         <div class="section-header">
           <h2 class="section-title">XIV<br>COLLECTIONS<br>23-24</h2>
         </div>
         <div class="collection-products">
+          <!-- Add imgs -->
           <div class="collection-product">
             <img src="Assets/col1.png" alt="Green Shirt" />
             <div class="product-name">Green Shirt</div>
@@ -86,10 +107,12 @@
         </div>
       </section>
 
+      <!-- Fashion Approach -->
       <section class="approach-section">
         <h3>OUR APPROACH TO FASHION DESIGN</h3>
         <p>Minimal, aesthetic, and sustainable. We believe in timeless design and responsible production for a better future.</p>
         <div class="approach-gallery">
+          <!-- Add imgs -->
           <img src="Assets/look1.png" alt="Lookbook 1" />
           <img src="Assets/look2.png" alt="Lookbook 2" />
           <img src="Assets/look3.png" alt="Lookbook 3" />
@@ -99,20 +122,19 @@
     </main>
   </div>
 
-  <div id="footer"></div>
-
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      });
-
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
-  </script>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-brand">
+      <span class="footer-arrow">&#9654;</span>
+      <span class="footer-xiv">XIV</span>
+      <span class="footer-qr">QR</span>
+    </div>
+  </footer>
 </body>
 </html>

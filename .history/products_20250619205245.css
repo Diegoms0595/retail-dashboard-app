@@ -112,7 +112,16 @@ body, .container {
   cursor: pointer;
   display: block;
 }
+div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
 
+label {
+  cursor: pointer;
+}
 
 .filters h3 {
   font-size: 1.2rem;

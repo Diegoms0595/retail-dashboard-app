@@ -9,8 +9,22 @@
 </head>
 
 <body>
-  <div id="header"></div> <!-- Moved header div here -->
-  
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="main-nav">
+      <a href="#" class="active">Home</a>
+      <a href="#">Collections</a>
+      <a href="#">New</a>
+    </nav>
+    <div class="top-icons">
+
+      <button class="icon-btn">
+        <img src="Assets/shopping-cart.png" alt="Cart Icon"></button>
+
+      <button class="icon-btn"><img src="./Assets/magnifying-glass-1083378_1280.png" alt=""></button>
+
+  </header>
+
   <main class="products-main">
     <aside class="filters">
       <button class="menu-icon">&#9776;</button>
@@ -29,9 +43,11 @@
       <div class="filter-group">
         <label>Availability</label>
         <input type="checkbox" id="in-stock" />
+
         <div>
-          <label for="out-stock">Out of Stock</label>
-          <input type="checkbox" id="out-stock"/>
+           <label for="out-stock">Out of Stock</label>
+          <input type="checkbox" id="out-stock" />
+     
         </div>
       </div>
       <div class="filter-group">
@@ -39,7 +55,8 @@
       </div>
       <div class="filter-group">
         <label>Colors</label>
-        <div class="filter-colors"></div>
+        <div class="filter-colors">
+        </div>
       </div>
       <div class="filter-group">
         <label>Price Range</label>
@@ -54,7 +71,6 @@
         <label>Ratings</label>
       </div>
     </aside>
-    
     <section class="products-section">
       <div class="products-header">
         <nav class="breadcrumb">Home / Products</nav>
@@ -113,22 +129,21 @@
       </div>
     </section>
   </main>
-
-  <div id="footer"></div>
-
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      });
-
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
-  </script>
+  </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-brand">
+      <span class="footer-arrow">&#9654;</span>
+      <span class="footer-xiv">XIV</span>
+      <span class="footer-qr">QR</span>
+    </div>
+  </footer>
 </body>
 
 </html>

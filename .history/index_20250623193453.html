@@ -8,15 +8,15 @@
 </head>
 <body>
 
-  <div id="header"></div>
+  <div data-include="header.html"></div>
 
   <div class="main-wrapper">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-menu">
         <span class="menu-icon" id="menuToggle">&#9776;</span>
-        <div class="sidebar-links" id="sidebarLinks">
+        <div class="sidebar-links" id="sidebarLinks" style="display:none;">
           <span>Home</span>
-          <span>PRODUCTS</span>
+          <span>Collections</span>
           <span>New</span>
         </div>
       </div>
@@ -99,20 +99,16 @@
     </main>
   </div>
 
-  <div id="footer"></div>
-
+  <div data-include="footer.html"></div>
+  
+  <script src="include.js" defer></script>
   <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      });
-
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
+    // Dropdown sidebar functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebarLinks = document.getElementById('sidebarLinks');
+    menuToggle.addEventListener('click', () => {
+      sidebarLinks.style.display = sidebarLinks.style.display === 'none' ? 'block' : 'none';
+    });
   </script>
 </body>
 </html>
