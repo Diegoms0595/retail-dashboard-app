@@ -251,32 +251,6 @@ body {
   left: 0;
   z-index: 10;
 }
-
-.main-nav {
-  display: flex;
-  gap: 40px;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #2d2323;
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  padding: 8px 0;
-  transition: color 0.2s;
-}
-
-.main-nav a.active,
-.main-nav a:hover {
-  color: #b48b8b;
-}
-
-.top-icons {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-
 .icon-btn {
   width: 44px;
   height: 44px;
@@ -290,11 +264,4 @@ body {
   cursor: pointer;
   padding: 0;
   overflow: hidden;
-}
-
-.icon-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
 }
