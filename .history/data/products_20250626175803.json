@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "CAMISETA EJEMPLO",
+      "price": 19.99,
+      "colors": {
+        "negro": {
+          "images": [
+            "Assets/Men/black.avif"
+          ]
+        }
+      }
+    }
+  ]
+}

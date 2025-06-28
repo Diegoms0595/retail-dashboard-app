@@ -13,7 +13,8 @@
   
   <main class="products-main">
     <aside class="filters">
-
+      <button class="menu-icon">&#9776;</button>
+      <h3>Filters</h3>
       <div class="filter-group">
         <label>Size</label>
         <div class="filter-sizes">
@@ -81,6 +82,12 @@
 
   <script>
 
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
     fetch('footer.html')
       .then(res => res.text())
       .then(data => {
@@ -89,20 +96,22 @@
 
     fetch('products.json')
       .then(res => res.json())
-      .then(data => {
+      .then(products => {
         const grid = document.getElementById('products-grid');
-        
-        data.products.forEach(product => {
+
+        products.forEach(product => {
+
           const colorKeys = Object.keys(product.colors);
           const firstColor = product.colors[colorKeys[0]];
-          const firstImage = firstColor.images[0];
-          const imgPath = firstImage.startsWith('Assets/') ? firstImage : `Assets/Men/${firstImage}`;
 
+          const firstImage = firstColor.images[0];
+
+      
           const card = document.createElement('div');
           card.classList.add('product-card');
 
           card.innerHTML = `
-            <img src="${imgPath}" alt="${product.name}" />
+            <img src="${firstImage}" alt="${product.name}" />
             <div class="product-type">${product.categories.join(', ')}</div>
             <div class="product-name">${product.name}</div>
             <div class="product-price">$${product.price.toFixed(2)}</div>
@@ -111,9 +120,10 @@
           grid.appendChild(card);
         });
       })
-      .catch(err => {});
+      .catch(err => {
+        console.error("Error al cargar productos:", err);
+      });
   </script>
-  <script src="products.js"></script>
 </body>
 
 </html>

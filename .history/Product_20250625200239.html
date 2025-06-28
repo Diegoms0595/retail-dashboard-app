@@ -13,7 +13,8 @@
   
   <main class="products-main">
     <aside class="filters">
-
+      <button class="menu-icon">&#9776;</button>
+      <h3>Filters</h3>
       <div class="filter-group">
         <label>Size</label>
         <div class="filter-sizes">
@@ -80,6 +81,11 @@
   <div id="footer"></div>
 
   <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
 
     fetch('footer.html')
       .then(res => res.text())
@@ -89,31 +95,56 @@
 
     fetch('products.json')
       .then(res => res.json())
-      .then(data => {
+      .then(products => {
         const grid = document.getElementById('products-grid');
-        
-        data.products.forEach(product => {
+
+        products.forEach(product => {
           const colorKeys = Object.keys(product.colors);
           const firstColor = product.colors[colorKeys[0]];
           const firstImage = firstColor.images[0];
-          const imgPath = firstImage.startsWith('Assets/') ? firstImage : `Assets/Men/${firstImage}`;
+
+          console.log('Imagen usada:', firstImage);
 
           const card = document.createElement('div');
           card.classList.add('product-card');
 
-          card.innerHTML = `
-            <img src="${imgPath}" alt="${product.name}" />
-            <div class="product-type">${product.categories.join(', ')}</div>
-            <div class="product-name">${product.name}</div>
-            <div class="product-price">$${product.price.toFixed(2)}</div>
-          `;
+          // Crear elemento img por separado para añadir listener de error
+          const img = document.createElement('img');
+          img.src = firstImage;
+          img.alt = product.name;
+
+          // Si la imagen no carga, mostrar mensaje
+          img.onerror = () => {
+            console.error('No se pudo cargar la imagen:', firstImage);
+            img.alt = "Imagen no disponible";
+            img.src = "placeholder.png"; // si tienes un placeholder
+          };
+
+          card.appendChild(img);
+
+          const typeDiv = document.createElement('div');
+          typeDiv.classList.add('product-type');
+          typeDiv.textContent = product.categories.join(', ');
+
+          const nameDiv = document.createElement('div');
+          nameDiv.classList.add('product-name');
+          nameDiv.textContent = product.name;
+
+          const priceDiv = document.createElement('div');
+          priceDiv.classList.add('product-price');
+          priceDiv.textContent = `$${product.price.toFixed(2)}`;
+
+          card.appendChild(typeDiv);
+          card.appendChild(nameDiv);
+          card.appendChild(priceDiv);
 
           grid.appendChild(card);
         });
       })
-      .catch(err => {});
+      .catch(err => {
+        console.error("Error al cargar productos:", err);
+      });
   </script>
-  <script src="products.js"></script>
 </body>
 
 </html>

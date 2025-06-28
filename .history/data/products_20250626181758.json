@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "name": "EJEMPLO",
+      "price": 10.99,
+      "colors": {
+        "negro": {
+          "images": ["./Assets/Men/black.jpeg"]
+        }
+      }
+    }
+  ]
+}

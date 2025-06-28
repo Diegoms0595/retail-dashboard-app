@@ -80,6 +80,17 @@
   <div id="footer"></div>
 
   <script>
+    function handleImageError(img) {
+      console.error('Failed to load image:', img.src);
+      img.src = 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/95c7a2fa-9674-4499-80a6-08b354704ae2.png';
+      img.style.border = '1px solid #ff000030';
+    }
+
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
 
     fetch('footer.html')
       .then(res => res.text())
@@ -87,6 +98,7 @@
         document.getElementById('footer').innerHTML = data;
       });
 
+    // Your new fetch code for products
     fetch('products.json')
       .then(res => res.json())
       .then(data => {

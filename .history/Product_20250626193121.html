@@ -87,6 +87,7 @@
         document.getElementById('footer').innerHTML = data;
       });
 
+    // Your new fetch code for products
     fetch('products.json')
       .then(res => res.json())
       .then(data => {

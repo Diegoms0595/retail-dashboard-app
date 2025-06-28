@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "SLEEVELESS RIBBED T-SHIRT",
+      "price": 22.90,
+      "description": "MIDWEIGHT - SLIM FIT - ROUND NECK - REGULAR LENGTH - SLEEVELESS...",
+      "categories": ["T-shirts", "Tops"],
+      "gender": "women",
+      "collections": ["new1", "new2"],
+      "reviews": ["Good!", "Just right size"],
+      "colors": {
+        "charcoal": {
+          "code": "rgb(25, 24, 29)",
+          "sizes": {
+            "S": 3,
+            "M": 3,
+            "L": 3
+          },
+          "images": [
+            "Assets/Men/black.avif",
+            "Assets/Men/black2.avif"
+          ]
+        },
+        "white": {
+          "code": "rgb(246, 245, 250)",
+          "sizes": {
+            "S": 3,
+            "M": 3,
+            "L": 3
+          },
+          "images": [
+            "Assets/Men/white.avif",
+            "Assets/Men/white2.avif"
+          ]
+        }
+      }
+    }
+  ]
+}
