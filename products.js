@@ -30,6 +30,11 @@ function renderProducts(products) {
     const card = document.createElement('div');
     card.classList.add('product-card');
 
+    card.addEventListener('click', () => {
+      window.location.href = `/details.html?product_id=${product.id}`;
+    });
+    card.style.cursor = 'pointer';
+
     const img = document.createElement('img');
     img.src = firstImage;
     img.alt = product.name;
