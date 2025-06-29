@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="details.css" />
+    </head>
+    <body>
+        <div id="header"></div>
+        <main>
+            <div id="details-wrapper">
+                <div id="details-big-image"></div>
+                <div id="details-small-images"></div>
+                <div id="details-info-wrapper">
+                    <div id="details-fav-button"><img src="Assets/favo-heart.png" alt=""></div>
+                    <div id="details-info-contents-wrapper">
+                        <div id="details-product-name"></div>
+                        <div id="details-product-price"></div>
+                        <div id="details-product-price-info"></div>
+                        <div id="details-product-description"></div>
+                        <div id="details-product-colors-wrapper">
+                            <p>Color</p>
+                            <div id="details-product-colors"></div>
+                        </div>
+                        <div id="details-product-sizes-wrapper">
+                            <p>Size</p>
+                            <div id="details-product-sizes"></div>
+                        </div>
+                        <div id="details-produc-sizeguides">
+                            <a href="">FIND YOUR SIZE</a>
+                            <p>|</p>
+                            <a href="">MEASUREMENT GUIDE</a>
+                        </div>
+                        <button id="details-product-add-button">Add</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div id="footer"></div>
+        <script>
+            fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+        
+            fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+        </script>
+    </body>
+</html>
+

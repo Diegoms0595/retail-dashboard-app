@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="cart.css" />
+    </head>
+    <body>
+        <div id="header"></div>
+        <main>
+            <div id="cart-wrapper">
+                <div id="cart-contents-wrapper">
+                    <div id="cart-tabs">
+                        <div id="cart-tab-bag">
+                            <p>Shopping bag</p>
+                        </div>
+                        <div id="cart-tab-favorite">
+                            <img src="Assets/favo-heart.png" alt="">
+                            <p>favourites</p>
+                        </div>
+                    </div>
+                    <div id="cart-products-wrapper"></div>
+                </div>
+                <div id="cart-summary-wrapper">
+                    <p id="cart-summary-title" >ORDER SUMMARY</p>
+                    <div id="cart-subtotal-wrapper" class="cart-summary-horizontal-box">
+                        <p>Subtotal</p>
+                        <div id="cart-subtotal-value"></div>
+                    </div>
+                    <div id="cart-shipping-wrapper" class="cart-summary-horizontal-box">
+                        <p>Shipping</p>
+                        <div id="cart-shipping-value"></div>
+                    </div>
+                    <hr>
+                    <div id="cart-total-wrapper" class="cart-summary-horizontal-box">
+                        <p>Total (Tax incl.)</p>
+                        <div id="cart-total-value"></div>
+                    </div>
+                    <div id="cart-conditions-wrapper" class="cart-summary-horizontal-box">
+                        <input type="checkbox">
+                        <p>I agree to the Terms and Conditions</p>
+                    </div>
+                    <button>continue</button>
+                </div>
+            </div>
+        </main>
+        <div id="footer"></div>
+        <script>
+            fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+        
+            fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+        </script>
+    </body>
+</html>
+
