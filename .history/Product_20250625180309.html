@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XIV Fashion | Products</title>
+  <link rel="stylesheet" href="products.css" />
+</head>
+
+<body>
+  <div id="header"></div>
+  
+  <main class="products-main">
+    <aside class="filters">
+      <button class="menu-icon">&#9776;</button>
+      <h3>Filters</h3>
+      <div class="filter-group">
+        <label>Size</label>
+        <div class="filter-sizes">
+          <button>XS</button>
+          <button>S</button>
+          <button>M</button>
+          <button>L</button>
+          <button>XL</button>
+          <button>2X</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Availability</label>
+        <input type="checkbox" id="in-stock" />
+        <div>
+          <label for="out-stock">Out of Stock</label>
+          <input type="checkbox" id="out-stock"/>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Category</label>
+      </div>
+      <div class="filter-group">
+        <label>Colors</label>
+        <div class="filter-colors"></div>
+      </div>
+      <div class="filter-group">
+        <label>Price Range</label>
+      </div>
+      <div class="filter-group">
+        <label>Collections</label>
+      </div>
+      <div class="filter-group">
+        <label>Tags</label>
+      </div>
+      <div class="filter-group">
+        <label>Ratings</label>
+      </div>
+    </aside>
+    
+    <section class="products-section">
+      <div class="products-header">
+        <nav class="breadcrumb">Home / Products</nav>
+        <h1>PRODUCTS</h1>
+        <div class="products-search">
+          <input type="text" placeholder="Search" />
+        </div>
+        <div class="products-tabs">
+          <button class="active">NEW</button>
+          <button>BEST SELLERS</button>
+          <button>T-SHIRTS</button>
+          <button>POLO SHIRTS</button>
+          <button>SHORTS</button>
+          <button>JEANS</button>
+          <button>JACKETS</button>
+          <button>COATS</button>
+        </div>
+      </div>
+      <div class="products-grid">
+        <div id="id1" class="product-card">
+          <div class="product-type">Cotton T Shirt</div>
+          <div class="product-name">Basic Slim Fit T-Shirt</div>
+          <div class="product-price">$199</div>
+        </div>
+        <div class="product-card">
+          <img src="Assets/Product2.png" alt="Basic Heavy Weight T-Shirt" />
+          <div class="product-type">Crewneck T Shirt</div>
+          <div class="product-name">Basic Heavy Weight T-Shirt</div>
+          <div class="product-price">$199</div>
+        </div>
+        <div class="product-card">
+          <img src="Assets/Product3.png" alt="Full Sleeve Zipper" />
+          <div class="product-type">Cotton T Shirt</div>
+          <div class="product-name">Full Sleeve Zipper</div>
+          <div class="product-price">$199</div>
+        </div>
+        <div class="product-card">
+          <img src="Assets/Product4.png" alt="Full Sleeve Zipper" />
+          <div class="product-type">Cotton T Shirt</div>
+          <div class="product-name">Full Sleeve Zipper</div>
+          <div class="product-price">$199</div>
+        </div>
+        <div class="product-card">
+          <img src="Assets/Product5.png" alt="Full Sleeve Zipper" />
+          <div class="product-type">Cotton T Shirt</div>
+          <div class="product-name">Full Sleeve Zipper</div>
+          <div class="product-price">$199</div>
+        </div>
+        <div class="product-card">
+          <img src="Assets/Product6.png" alt="Full Sleeve Zipper" />
+          <div class="product-type">Cotton T Shirt</div>
+          <div class="product-name">Full Sleeve Zipper</div>
+          <div class="product-price">$199</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+</body>
+
+</html>

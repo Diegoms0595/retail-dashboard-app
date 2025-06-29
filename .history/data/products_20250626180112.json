@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "name": "Producto Ejemplo",
+      "price": 19.99,
+      "categories": ["T-shirts"],
+      "colors": {
+        "negro": {
+          "images": ["ruta/imagen.jpg"]
+        }
+      }
+    }
+  ]
+}

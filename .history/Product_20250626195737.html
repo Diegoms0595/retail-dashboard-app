@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XIV Fashion | Products</title>
+  <link rel="stylesheet" href="products.css" />
+</head>
+
+<body>
+  <main class="products-main">
+    <aside class="filters">
+      <div class="filter-group">
+        <label>Size</label>
+        <div class="filter-sizes">
+          <button data-size="XS">XS</button>
+          <button data-size="S">S</button>
+          <button data-size="M">M</button>
+          <button data-size="L">L</button>
+          <button data-size="XL">XL</button>
+          <button data-size="2X">2X</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Availability</label>
+        <div>
+          <input type="checkbox" id="in-stock" />
+          <label for="in-stock">In Stock</label>
+        </div>
+        <div>
+          <input type="checkbox" id="out-stock" />
+          <label for="out-stock">Out of Stock</label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Colors</label>
+        <div class="filter-colors"></div>
+      </div>
+    </aside>
+
+    <section class="products-section">
+      <div class="products-header">
+        <nav class="breadcrumb">Home / Products</nav>
+        <h1>PRODUCTS</h1>
+        <div class="products-search">
+          <input type="text" id="searchInput" placeholder="Search" />
+        </div>
+      </div>
+
+      <div class="products-grid" id="products-grid"></div>
+    </section>
+  </main>
+
+  <script>
+    let allProducts = [];
+
+    function handleImageError(img) {
+      img.src = 'https://via.placeholder.com/300x400?text=Image+Not+Found';
+      img.style.border = '1px solid #f00';
+    }
+
+    function renderProducts(products) {
+      const grid = document.getElementById('products-grid');
+      grid.innerHTML = '';
+
+      products.forEach(product => {
+        const firstColor = product.colors[Object.keys(product.colors)[0]];
+        const firstImage = firstColor.images[0].replace(/^\.\//, '');
+
+        const card = document.createElement('div');
+        card.classList.add('product-card');
+
+        const img = document.createElement('img');
+        img.src = firstImage;
+        img.alt = product.name;
+        img.onerror = () => handleImageError(img);
+
+        const category = document.createElement('div');
+        category.className = 'product-type';
+        category.textContent = product.categories.join(', ');
+
+        const name = document.createElement('div');
+        name.className = 'product-name';
+        name.textContent = product.name;
+
+        const price = document.createElement('div');
+        price.className = 'product-price';
+        price.textContent = `$${product.price.toFixed(2)}`;
+
+        card.appendChild(img);
+        card.appendChild(category);
+        card.appendChild(name);
+        card.appendChild(price);
+
+        grid.appendChild(card);
+      });
+    }
+
+    function applyFilters() {
+      const searchValue = document.getElementById('searchInput').value.toLowerCase();
+      const sizeBtns = document.querySelectorAll('[data-size].active');
+      const selectedSizes = Array.from(sizeBtns).map(btn => btn.dataset.size);
+      const inStock = document.getElementById('in-stock').checked;
+      const outStock = document.getElementById('out-stock').checked;
+
+      const filtered = allProducts.filter(product => {
+        const matchSearch = product.name.toLowerCase().includes(searchValue);
+
+        const hasSize = selectedSizes.length === 0 || Object.values(product.colors).some(color => {
+          return Object.keys(color.sizes).some(size => selectedSizes.includes(size));
+        });
+
+        const hasStock = Object.values(product.colors).some(color => {
+          const stockTotal = Object.values(color.sizes).reduce((a, b) => a + b, 0);
+          return (inStock && stockTotal > 0) || (outStock && stockTotal === 0);
+        });
+
+        return matchSearch && hasSize && hasStock;
+      });
+
+      renderProducts(filtered);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('products.json')
+        .then(res => res.json())
+        .then(data => {
+          allProducts = data.products;
+          renderProducts(allProducts);
+        });
+
+      document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+      document.querySelectorAll('[data-size]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.classList.toggle('active');
+          applyFilters();
+        });
+      });
+
+      document.getElementById('in-stock').addEventListener('change', applyFilters);
+      document.getElementById('out-stock').addEventListener('change', applyFilters);
+    });
+  </script>
+</body>
+
+</html>

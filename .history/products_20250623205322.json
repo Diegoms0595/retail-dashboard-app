@@ -1,0 +1,24 @@
+{
+  "hero": [
+    {"alt": "Product 1" },
+    {"alt": "Product 2" },
+    {"alt": "Product 3" }
+  ],
+  "week": [
+    {"name": "Pattern Shirt", "price": "$199" },
+    {"name": "White Tee", "price": "$150" },
+    {"name": "Beige Tee", "price": "$170" },
+    {"name": "Print Tee", "price": "$160" }
+  ],
+  "collections": [
+    {"name": "Green Shirt", "price": "$199" },
+    {"name": "White Pants", "price": "$170" },
+    {"name": "Beige Tee", "price": "$150" }
+  ],
+  "lookbook": [
+    {"alt": "Lookbook 1" },
+    {"alt": "Lookbook 2" },
+    {"alt": "Lookbook 3" },
+    {"alt": "Lookbook 4" }
+  ]
+}

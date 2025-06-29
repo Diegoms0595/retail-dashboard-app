@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XIV Fashion Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="DashStyle.css">
+</head>
+<body>
+  <div id="header"></div>
+    <h1>XIV Fashion <span>Dashboard</span></h1>
+  </div>
+  
+  <div class="dashboard-container">
+    <!-- Inventory Section -->
+    <div class="dashboard-section">
+      <div class="section-header">
+        <h2>Inventory Overview</h2>
+        <div class="summary-box">
+          <div class="summary-item">
+            <span>Total Products</span>
+            <strong id="totalProducts">8</strong>
+          </div>
+          <div class="summary-item">
+            <span>Low Stock</span>
+            <strong id="lowStock">2</strong>
+          </div>
+        </div>
+      </div>
+      
+      <div class="inventory-controls">
+        <button class="refresh-btn">
+          <i class="refresh-icon">↻</i> Refresh Data
+        </button>
+        <div class="search-box">
+          <input type="text" placeholder="Search products...">
+        </div>
+      </div>
+      
+      <!-- Charts Row -->
+      <div class="charts-row">
+        <div class="chart-card">
+          <h3>Stock Levels</h3>
+          <canvas id="stockChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Monthly Sales</h3>
+          <canvas id="salesChart"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Products Section -->
+    <div class="dashboard-section">
+      <h2>Product Management</h2>
+      
+      <div class="product-grid" id="productGrid">
+        <!-- Product cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+    
+    <!-- Reviews Section -->
+    <div class="dashboard-section">
+      <h2>Customer Reviews</h2>
+      
+      <div class="charts-row">
+        <div class="chart-card">
+          <h3>Product Ratings</h3>
+          <canvas id="ratingsChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Review Trends</h3>
+          <canvas id="reviewsChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="footer"></div>
+
+  <script src="DashScript.js"></script>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

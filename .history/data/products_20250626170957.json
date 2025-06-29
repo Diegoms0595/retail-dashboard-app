@@ -1,0 +1,90 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "SLEEVELESS RIBBED T-SHIRT",
+      "price": 22.90,
+      "description": "MIDWEIGHT - SLIM FIT - ROUND NECK - REGULAR LENGTH - SLEEVELESS. T-shirt made of a cotton blend. Round neck and sleeveless.",
+      "categories": ["T-shirts", "Tops"],
+      "gender": "women",
+      "collections": ["new1", "new2"],
+      "reviews": ["Good!", "Just right size"],
+      "colors": {
+        "charcoal": {
+          "code": "rgb(25, 24, 29)",
+          "sizes": {
+            "S": 3,
+            "M": 3,
+            "L": 3
+          },
+          "images": [
+            "./Assets/Men/black.avif",
+            "Assets/Men/black2.avif",
+            "images/products/1/charcoal-3.jpg",
+            "images/products/1/charcoal-4.jpg",
+            "images/products/1/charcoal-5.jpg"
+          ]
+        },
+        "white": {
+          "code": "rgb(246, 245, 250)",
+          "sizes": {
+            "S": 3,
+            "M": 3,
+            "L": 3
+          },
+          "images": [
+            "images/products/1/white-1.jpg",
+            "images/products/1/white-2.jpg",
+            "images/products/1/white-3.jpg",
+            "images/products/1/white-4.jpg"
+          ]
+        },
+        "coral": {
+          "code": "rgb(248, 180, 166)",
+          "sizes": {
+            "S": 3,
+            "M": 3,
+            "L": 3
+          },
+          "images": [
+            "images/products/1/coral-1.jpg",
+            "images/products/1/coral-2.jpg",
+            "images/products/1/coral-3.jpg",
+            "images/products/1/coral-4.jpg",
+            "images/products/1/coral-5.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "DOUBLE BREASTED LINEN VEST",
+      "price": 65.90,
+      "description": "Vest made in 100% linen. Round neck and sleeveless. Double-breasted button fastening at the front.",
+      "categories": ["Tops"],
+      "gender": "women",
+      "collections": ["new1"],
+      "reviews": ["I like it!"],
+      "colors": {
+        "indigo": {
+          "code": "#4B0082",
+          "sizes": {
+            "XS": 3,
+            "S": 3,
+            "M": 3,
+            "L": 3
+          },
+          "images": [
+            "images/products/1/1.jpg",
+            "images/products/1/2.jpg",
+            "images/products/1/3.jpg",
+            "images/products/1/4.jpg",
+            "images/products/1/5.jpg",
+            "images/products/1/6.jpg",
+            "images/products/1/7.jpg"
+          ]
+        }
+      }
+    }
+  ]
+}
