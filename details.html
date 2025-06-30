@@ -16,10 +16,11 @@
                 <div id="details-info-wrapper">
                     <div id="details-fav-button"><img src="Assets/favo-heart.png" alt=""></div>
                     <div id="details-info-contents-wrapper">
-                        <div id="details-product-name"></div>
-                        <div id="details-product-price"></div>
-                        <div id="details-product-price-info"></div>
-                        <div id="details-product-description"></div>
+                        <div id="details-info-title">
+                            <div id="details-product-name"><h1></h1></div>
+                            <div id="details-product-price"><h1></h1></div>
+                        </div>
+                        <div id="details-product-description"><p></p></div>
                         <div id="details-product-colors-wrapper">
                             <p>Color</p>
                             <div id="details-product-colors"></div>
@@ -37,6 +38,9 @@
                     </div>
                 </div>
             </div>
+            <div id="details-no-propduct-wrapper">
+                <p>This product does not exist.</p>
+            </div>
         </main>
         <div id="footer"></div>
         <script>
@@ -52,6 +56,7 @@
                 document.getElementById('footer').innerHTML = data;
             });
         </script>
+        <script src="details.js"></script>
     </body>
 </html>
 

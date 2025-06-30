@@ -1,6 +1,6 @@
 #details-wrapper {
     display: flex;
-    padding: 200px 250px 0px 250px;
+    padding: 150px 250px 0px 250px;
     justify-content: space-between;
     min-height: 700px;
 }
@@ -8,22 +8,37 @@
 #details-big-image {
     display: flex;
     justify-content: left;
-    align-items: center;
+    align-items: start;
     width: 40%;
     height: 100%;
-    padding-top: 5%;
 }
 
 #details-big-image img {
-    width: auto;
-    height: 90%;
+    width: 100%;
+    height: auto;
+    border: 1px solid darkgray;
 }
 
 #details-small-images {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    width: 10%;
     height: 100%;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+#details-small-images img {
+    width: 100%;
+    height: auto;
+    border: 1px solid darkgray;
+    opacity: 60%;
+}
+
+#details-small-images img.details-image-selected {
+    opacity: 100%;
 }
 
 #details-info-wrapper {
@@ -32,6 +47,8 @@
     justify-content: space-between;
     width: 35%;
     border: 2px solid darkgray;
+    margin-left: 10%;
+    max-height: 550px;
 }
 
 #details-fav-button {
@@ -47,10 +64,60 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 10% 10% 5% 10%;
+    padding: 15% 10% 5% 10%;
+    height: 100%;
+    font-size: 0.8rem;
+}
+
+#details-info-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#details-product-name h1,
+#details-product-price h1 {
+    font-size: 1.5rem;
+}
+
+#details-product-colors {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.details-color-box {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid lightgray;
+    opacity: 60%;
+}
+
+.details-color-box.details-color-selected {
+    border: 1px solid black;
+    opacity: 100%;
 }
 
 #details-produc-sizeguides {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+#details-product-add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    padding: 15px 20px;
+}
+
+#details-no-propduct-wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid darkgray;
+    min-height: 500px;
+    margin: 200px;
 }
