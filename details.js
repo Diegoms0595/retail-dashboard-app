@@ -59,6 +59,27 @@
 
             colorsDiv.appendChild(box);
           });
+          
+          sizes = product.colors[colorId].sizes;
+          const sizesDiv = document.getElementById('details-product-sizes');
+          Object.entries(sizes).forEach(([sizeName, stock]) => {
+            const btn = document.createElement('button');
+            btn.textContent = sizeName;
+            btn.classList.add('details-size-button');
+
+            if (stock <= 0) {
+              btn.disabled = true;
+              btn.classList.add('out-of-stock');
+            }
+
+            btn.addEventListener('click', () => {
+              document.querySelectorAll('.details-size-selected').forEach(b => b.classList.remove('details-size-selected'));
+              btn.classList.add('details-size-selected');
+            });
+
+            sizesDiv.appendChild(btn);
+          });
+
                     
       } else {
           console.info('The Product does not exist: ${productId}');

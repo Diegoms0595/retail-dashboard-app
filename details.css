@@ -98,6 +98,25 @@
     opacity: 100%;
 }
 
+#details-product-sizes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.details-size-button {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid lightgray;
+    opacity: 60%;
+}
+
+.details-size-button.details-size-selected {
+    border: 1px solid black;
+    opacity: 100%;
+}
+
+
 #details-produc-sizeguides {
     display: flex;
     align-items: center;
