@@ -28,7 +28,7 @@
 
             thumb.addEventListener('click', () => {
               bigImg.src = imgSrc;
-            　const allThumbs = smallImagesDiv.querySelectorAll('img');
+              const allThumbs = smallImagesDiv.querySelectorAll('img');
               allThumbs.forEach(img => img.classList.remove('details-image-selected'));
               thumb.classList.add('details-image-selected');
             });
@@ -52,12 +52,12 @@
             }
 
             box.addEventListener('click', () => {
-            　　const url = new URL(window.location.href);
-            　　url.searchParams.set('color_id', index);
-               window.location.href = url.toString();
+              const url = new URL(window.location.href);
+              url.searchParams.set('color_id', index);
+              window.location.href = url.toString();
             });
 
-              colorsDiv.appendChild(box);
+            colorsDiv.appendChild(box);
           });
                     
       } else {
