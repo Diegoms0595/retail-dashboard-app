@@ -23,7 +23,7 @@ function renderProducts(products) {
   grid.innerHTML = '';
 
   products.forEach(product => {
-    const firstColor = product.colors[Object.keys(product.colors)[0]];
+    const firstColor = product.colors[0];
     let firstImage = firstColor.images[0];
     if (firstImage.startsWith('./')) firstImage = firstImage.slice(2);
 
