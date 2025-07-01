@@ -37,7 +37,9 @@
     border-bottom: 1px solid darkgray;
     min-height: 100px;
     padding: 10px 0;
-    gap: 10%;
+    gap: 2%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
 }
 
 #empty-cart-wrapper {
@@ -49,11 +51,12 @@
 
 .cart-item {
     display: flex;
+    flex: 0 0 auto;
     width: 45%;
 }
 
 .cart-item-left {
-    width: 70%;
+    width: 80%;
 }
 
 .cart-item-image {
@@ -64,7 +67,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    width: 20%;
     gap: 5%;
 }
 
