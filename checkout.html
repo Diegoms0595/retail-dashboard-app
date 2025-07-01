@@ -62,75 +62,64 @@
                                     <input type="text" class="checkout-form" id="checkout-payment-expire-month" placeholder="Month" maxlength="2" required>
                                     <input type="text" class="checkout-form" id="checkout-payment-expire-year" placeholder="Year" maxlength="2" required>
                                 </div>
+                                <div id="checkout-conditions-wrapper">
+                                    <input type="checkbox">
+                                    <p>I agree to the Terms and Conditions</p>
+                                </div>
                             </div>
                             <div class="checkout-processing-button-wrapper">
                                 <button class="checkout-processing-button" data-goto="shipping"><img src="Assets/left-vector.png" alt="">Shipping</button>
-                                <button class="checkout-processing-button" data-goto="checkout">Checkout<img src="Assets/right-vector.png" alt=""></button>
+                                <button id="checkout-button" class="checkout-processing-button" data-goto="checkout">Checkout<img src="Assets/right-vector.png" alt=""></button>
                             </div>
                         </div>
                     </div>
                     <div id="checkout-order-wrapper">
                         <div id="checkout-order-count-wrapper">
-                            <div id="checkout-order-count"></div>
+                            <div id="checkout-order-count">
+                                <p id="checkout-order-count-value"></p>
+                            </div>
                         </div>
                         <div id="checkout-order-details-wrapper">
                             <h2>YOUR ORDER</h2>
-                            <div id="checkout-order-products-wrapper"></div>
-                            <hr>
-                            <div id="checkout-order-subtotal-wrapper">
-                                <h3>Subtotal</h2>
-                            </div>
-                            <div id="checkout-order-shipping-wrapper">
-                                <h3>Shipping</h2>
+                            <div id="checkout-order-products-wrapper">
+                                <div id="empty-cart-wrapper">
+                                    <p>The cart is empty.</p>
+                                </div>
                             </div>
                             <hr>
-                            <div id="checkout-order-total-wrapper">
+                            <div id="checkout-order-subtotal-wrapper" class="checkout-price-box">
+                                <h3>Subtotal</h3>
+                                <div id="checkout-subtotal-value"></div>
+                            </div>
+                            <div id="checkout-order-shipping-wrapper" class="checkout-price-box">
+                                <h3>Shipping</h3>
+                                <div id="checkout-shipping-value"></div>
+                            </div>
+                            <hr>
+                            <div id="checkout-order-total-wrapper" class="checkout-price-box">
                                 <h2>Total</h2>
+                                <div id="checkout-total-value"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+        <div id="footer"></div>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const tabs = document.querySelectorAll('#checkout-data-tabs p');
-                const sections = document.querySelectorAll('[data-section]');
-                const buttons = document.querySelectorAll('.checkout-processing-button');
-
-                function showSection(target) {
-                    sections.forEach(section => {
-                        if (section.getAttribute('data-section') === target) {
-                            section.classList.remove('hidden');
-                        } else {
-                            section.classList.add('hidden');
-                        }
-                    });
-
-                    tabs.forEach(tab => {
-                        if (tab.getAttribute('data-content') === target) {
-                            tab.classList.remove('deactive-tab');
-                        } else {
-                            tab.classList.add('deactive-tab');
-                        }
-                    });
-                }
-
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        const target = tab.getAttribute('data-content');
-                        showSection(target);
-                    });
-                });
-
-                buttons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const target = button.getAttribute('data-goto');
-                        showSection(target);
-                    });
-                });
+            fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
             });
-        </script>            
+        
+            fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+        </script>
+        <script src="checkout.js"></script>            
     </body>
 </html>
 
