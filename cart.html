@@ -13,36 +13,36 @@
             <div id="cart-wrapper">
                 <div id="cart-contents-wrapper">
                     <div id="cart-tabs">
-                        <div id="cart-tab-bag">
+                        <div id="cart-tab-bag" class="active-tab">
                             <p>Shopping bag</p>
                         </div>
                         <div id="cart-tab-favorite">
-                            <img src="Assets/favo-heart.png" alt="">
-                            <p>favourites</p>
+                            <p>Favourites</p>
                         </div>
                     </div>
-                    <div id="cart-products-wrapper"></div>
+                    <div id="cart-products-wrapper">
+                        <div id="empty-cart-wrapper">
+                            <p>The cart is empty.</p>
+                        </div>
+                    </div>
+                    <div id="cart-favo-wrapper" class="hidden"></div>
                 </div>
                 <div id="cart-summary-wrapper">
                     <p id="cart-summary-title" >ORDER SUMMARY</p>
-                    <div id="cart-subtotal-wrapper" class="cart-summary-horizontal-box">
+                    <div id="cart-subtotal-wrapper" class="cart-summary-price-box">
                         <p>Subtotal</p>
                         <div id="cart-subtotal-value"></div>
                     </div>
-                    <div id="cart-shipping-wrapper" class="cart-summary-horizontal-box">
+                    <div id="cart-shipping-wrapper" class="cart-summary-price-box">
                         <p>Shipping</p>
                         <div id="cart-shipping-value"></div>
                     </div>
                     <hr>
-                    <div id="cart-total-wrapper" class="cart-summary-horizontal-box">
+                    <div id="cart-total-wrapper" class="cart-summary-price-box">
                         <p>Total (Tax incl.)</p>
                         <div id="cart-total-value"></div>
                     </div>
-                    <div id="cart-conditions-wrapper" class="cart-summary-horizontal-box">
-                        <input type="checkbox">
-                        <p>I agree to the Terms and Conditions</p>
-                    </div>
-                    <button>continue</button>
+                    <a href="checkout.html"><button id="cart-continue-button">continue</button></a>
                 </div>
             </div>
         </main>
@@ -60,6 +60,7 @@
                 document.getElementById('footer').innerHTML = data;
             });
         </script>
+        <script src="cart.js"></script>
     </body>
 </html>
 

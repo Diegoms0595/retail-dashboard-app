@@ -38,7 +38,7 @@ fetch('products.json')
       });
 
       document.querySelector('#details-product-name h1').textContent = product.name;
-      document.querySelector('#details-product-price h1').textContent = `\$${product.price}`;
+      document.querySelector('#details-product-price h1').textContent = `\$${product.price.toFixed(2)}`;
       document.querySelector('#details-product-description p').textContent = product.description;
       
       colors = product.colors;
@@ -49,6 +49,7 @@ fetch('products.json')
         box.classList.add('details-color-box');
         box.dataset.colorId = index;
         box.dataset.colorName = color.name;
+        box.dataset.colorCode = color.code;
 
         if (index === colorId) {
           box.classList.add('details-color-selected');
@@ -113,7 +114,9 @@ document.getElementById("details-product-add-button").addEventListener("click", 
 
   const productColorId = selectedColorBtn.dataset.colorId;
   const productColorName = selectedColorBtn.dataset.colorName;
+  const productColorCode = selectedColorBtn.dataset.colorCode;
   const productSize = selectedSizeBtn.dataset.size;
+  const productImage = product.colors[productColorId].images[0];
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -131,8 +134,10 @@ document.getElementById("details-product-add-button").addEventListener("click", 
       name: productName,
       price: productPrice,
       size: productSize,
-    colorId: productColorId,
-    colorName: productColorName,
+      colorId: productColorId,
+      colorName: productColorName,
+      colorCode: productColorCode,
+      image: productImage,
       quantity: 1
     });
   }
