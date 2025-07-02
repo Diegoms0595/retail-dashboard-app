@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const quantityWrapper = document.createElement("div");
         quantityWrapper.classList.add("cart-quantity-groups");
-          console.log("クラス名:", quantityWrapper.className);
         const quantity = document.createElement("p");
         quantity.textContent = item.quantity;
 
