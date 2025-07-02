@@ -147,6 +147,11 @@
     padding: 20px 250px 0px 250px;
 }
 
+#review-title-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 #no-reviews {
     display: none;
     flex-direction: column;
@@ -219,6 +224,7 @@
 
 .review-start-wrapper {
     display: flex;
+    align-items: center;
     padding: 10px;
     gap: 3px;
 }

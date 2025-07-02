@@ -119,7 +119,11 @@ fetch('data/reviews.json')
     reviewAddCard.appendChild(addReviewButton);
     reviewCarousel.appendChild(reviewAddCard);
 
+    let scoreSum = 0;
+
     reviews.forEach((review, index) => {
+      scoreSum += review.stars;
+
       const reviewCard = document.createElement('div');
       reviewCard.classList.add("review-card");
 
@@ -163,6 +167,23 @@ fetch('data/reviews.json')
 
       reviewCarousel.appendChild(reviewCard);
     });
+
+    const avrStarsDiv = document.getElementById("avr-starts");
+    const openH2 = document.createElement('h2');
+    openH2.textContent = "[ Average Score: ";
+    avrStarsDiv.appendChild(openH2);
+
+    const avrScore = Math.round(scoreSum / reviews.length);
+    for (let i = 0; i < avrScore; i++) {
+      const star = document.createElement('p');
+      star.textContent = "⭐️";
+      avrStarsDiv.appendChild(star);
+    }
+
+    const closeH2 = document.createElement('h2');
+    closeH2.textContent = " ]";
+    avrStarsDiv.appendChild(closeH2);
+    
   } else {
     document.getElementById('no-reviews').style.display = 'flex';
   }
