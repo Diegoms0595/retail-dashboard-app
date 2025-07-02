@@ -8,7 +8,6 @@
       "categories": ["T-shirts", "Tops"],
       "gender": "men",
       "collections": ["new1", "new2"],
-      "reviews": ["Good!", "Just right size"],
       "colors": [
         {
           "name": "black",
@@ -51,7 +50,6 @@
       "categories": ["Tops"],
       "gender": "women",
       "collections": ["new1"],
-      "reviews": ["I like it!"],
       "colors": [
         {
           "name": "brown",
@@ -75,7 +73,6 @@
       "categories": ["Coats"],
       "gender": "women",
       "collections": ["new2", "bestsellers"],
-      "reviews": ["Great item!", "Would buy again."],
       "colors": [
         {
           "name": "white",
@@ -98,7 +95,6 @@
       "categories": ["Shorts"],
       "gender": "women",
       "collections": ["bestsellers", "sale"],
-      "reviews": ["Great item!", "Would buy again."],
       "colors": [
         {
           "name": "white",
@@ -118,7 +114,6 @@
       "categories": ["T-shirts"],
       "gender": "women",
       "collections": ["bestsellers", "sale"],
-      "reviews": ["Great item!", "Would buy again."],
       "colors": [
         {
           "name": "white",
@@ -138,7 +133,6 @@
       "categories": ["Shorts"],
       "gender": "men",
       "collections": ["sale", "new1"],
-      "reviews": ["Great item!", "Would buy again."],
       "colors": [
         {
           "name": "white",
