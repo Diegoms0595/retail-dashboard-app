@@ -1,0 +1,21 @@
+#complete-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 200px 50px 0 50px;
+    min-height: 700px;
+}
+
+#to-the-home-button {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    padding: 20px 40px;
+    background-color: lightgray;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+a#to-the-home-button {
+    text-decoration: none;
+    color: black;
+}

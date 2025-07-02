@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="complete.css" />
+    </head>
+    <body>
+        <div id="header"></div>
+        <main>
+            <div id="complete-wrapper">
+                <h1>Complete!</h1>
+                <h2>Thank you for shopping!</h2>
+                <a href="/" id="to-the-home-button"><img src="Assets/left-vector.png" alt="">To the home</a>
+            </div>
+        </main>
+        <div id="footer"></div>
+        <script>
+            fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+        
+            fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+        </script>
+    </body>
+</html>
+

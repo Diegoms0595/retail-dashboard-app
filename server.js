@@ -6,6 +6,11 @@ const PORT = 3000;
 
 // Serve static files (HTML/CSS/JS)
 app.use(express.static(__dirname));
+app.use(express.json());
+
+// Routing
+const orderRoute = require('./api/order');
+app.use('/api/order', orderRoute);
 
 // Start server
 app.listen(PORT, () => {

@@ -69,7 +69,7 @@
                             </div>
                             <div class="checkout-processing-button-wrapper">
                                 <button class="checkout-processing-button" data-goto="shipping"><img src="Assets/left-vector.png" alt="">Shipping</button>
-                                <button id="checkout-button" class="checkout-processing-button" data-goto="checkout">Checkout<img src="Assets/right-vector.png" alt=""></button>
+                                <button id="checkout-button" class="checkout-processing-button">Checkout<img src="Assets/right-vector.png" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -107,12 +107,6 @@
         </main>
         <div id="footer"></div>
         <script>
-            fetch('header.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-        
             fetch('footer.html')
             .then(res => res.text())
             .then(data => {
