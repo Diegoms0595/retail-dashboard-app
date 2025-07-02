@@ -98,6 +98,80 @@ fetch('products.json')
     console.error('Failed to load product data:', err);
 });
 
+fetch('data/reviews.json')
+.then(res => res.json())
+.then(data => {
+  reviews = data[productId];
+  const reviewCarousel = document.getElementById('review-carousel');
+
+  const addReviewButton = document.createElement('div');
+  addReviewButton.classList.add("review-add-button");
+  const buttonIcon = document.createElement('i');
+  buttonIcon.classList.add("fa-solid");
+  buttonIcon.classList.add("fa-plus");
+  addReviewButton.appendChild(buttonIcon);
+  addReviewButton.addEventListener('click', () => {
+  });
+
+  if (reviews && reviews.length > 0) {
+    const reviewAddCard = document.createElement('div');
+    reviewAddCard.classList.add("review-add-card");
+    reviewAddCard.appendChild(addReviewButton);
+    reviewCarousel.appendChild(reviewAddCard);
+
+    reviews.forEach((review, index) => {
+      const reviewCard = document.createElement('div');
+      reviewCard.classList.add("review-card");
+
+      const reviewCardUpper = document.createElement('div');
+
+      const account = document.createElement('div');
+      account.classList.add("review-account-wrapper");
+      const icon = document.createElement('i');
+      icon.classList.add("fa-solid");
+      icon.classList.add("fa-circle-user");
+      icon.classList.add("review-user-icon");
+      const name = document.createElement('p');
+      name.textContent = review.name;
+      account.appendChild(icon);
+      account.appendChild(name);
+
+      const starsDiv = document.createElement('div');
+      starsDiv.classList.add("review-start-wrapper")
+      for (let i = 0; i < review.stars; i++) {
+        const star = document.createElement('p');
+        star.textContent = "⭐️";
+        starsDiv.appendChild(star);
+      }
+
+      const commentDiv = document.createElement('div');
+      commentDiv.classList.add("review-comment-wrapper");
+      const comment = document.createElement('p');
+      comment.textContent = review.comment;
+      commentDiv.appendChild(comment);
+
+      const dateDiv = document.createElement('div');
+      dateDiv.classList.add("review-date-wrapper");
+      const date = document.createElement('p');
+      dateDiv.textContent = review.date;
+
+      reviewCardUpper.appendChild(account);
+      reviewCardUpper.appendChild(starsDiv);
+      reviewCardUpper.appendChild(commentDiv);
+      reviewCard.appendChild(reviewCardUpper);
+      reviewCard.appendChild(dateDiv);
+
+      reviewCarousel.appendChild(reviewCard);
+    });
+  } else {
+    document.getElementById('no-reviews').style.display = 'flex';
+  }
+})
+.catch(err => {
+    document.getElementById('no-reviews').style.display = 'flex';
+    console.error('Failed to load reviews data:', err);
+});
+
 document.getElementById("details-product-add-button").addEventListener("click", () => {
   const productId = product.id;
   const productName = product.name;

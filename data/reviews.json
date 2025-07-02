@@ -1,0 +1,64 @@
+{
+  "1": [
+    {
+      "name": "Emma",
+      "stars": 5,
+      "comment": "Absolutely amazing quality!",
+      "date": "2025-07-01"
+    },
+    {
+      "name": "Liam",
+      "stars": 5,
+      "comment": "Fits perfectly and looks great.",
+      "date": "2025-07-01"
+    },
+    {
+      "name": "Olivia",
+      "stars": 5,
+      "comment": "Super comfortable and stylish.",
+      "date": "2025-06-30"
+    },
+    {
+      "name": "Noah",
+      "stars": 5,
+      "comment": "Fast delivery and great product.",
+      "date": "2025-06-30"
+    },
+    {
+      "name": "Ava",
+      "stars": 5,
+      "comment": "Love the color and material.",
+      "date": "2025-06-29"
+    },
+    {
+      "name": "William",
+      "stars": 5,
+      "comment": "Exceeded my expectations!",
+      "date": "2025-06-29"
+    },
+    {
+      "name": "Sophia",
+      "stars": 5,
+      "comment": "Perfect for everyday wear.",
+      "date": "2025-06-28"
+    },
+    {
+      "name": "James",
+      "stars": 5,
+      "comment": "Feels very premium. Worth the price.",
+      "date": "2025-06-28"
+    },
+    {
+      "name": "Isabella",
+      "stars": 5,
+      "comment": "This is my second time buying it!",
+      "date": "2025-06-27"
+    },
+    {
+      "name": "Benjamin",
+      "stars": 5,
+      "comment": "Great fit and great quality.",
+      "date": "2025-06-27"
+    }
+  ]
+}
