@@ -44,15 +44,33 @@
                 <div id="review-carousel"></div>
                 <div id="no-reviews">
                     <p>Add a review!</p>
-                    <div class="review-add-button">
-                        <i class="fa-solid fa-plus"></i>
-                    </div>
                 </div>
             </div>
             <div id="details-no-propduct-wrapper">
                 <p>This product does not exist.</p>
             </div>
         </main>
+        <div id="reviewModal" class="modal hidden">
+            <button type="button" class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-title">Write a review!</div>
+            <form id="reviewForm">
+                <label>Name: <input name="name" required></label>
+                <label>Stars:
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                        <input type="hidden" name="stars" id="starInput" required>
+                    </div>
+                </label>
+                <label>Comment: <textarea name="comment" required></textarea></label>
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
         <div id="footer"></div>
         <script>
             fetch('header.html')
@@ -68,6 +86,51 @@
             });
         </script>
         <script src="details.js"></script>
+        <script>
+        // 星評価UI
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating .star');
+            const starInput = document.getElementById('starInput');
+            let selected = 0;
+            stars.forEach((star, idx) => {
+                star.addEventListener('mouseenter', () => {
+                    for(let i=0; i<stars.length; i++){
+                        stars[i].classList.toggle('hovered', i<=idx);
+                    }
+                });
+                star.addEventListener('mouseleave', () => {
+                    for(let i=0; i<stars.length; i++){
+                        stars[i].classList.toggle('hovered', i<selected);
+                    }
+                });
+                star.addEventListener('click', () => {
+                    selected = idx+1;
+                    starInput.value = selected;
+                    for(let i=0; i<stars.length; i++){
+                        stars[i].classList.toggle('selected', i<selected);
+                    }
+                });
+            });
+            // 初期化
+            if(starInput.value) {
+                for(let i=0; i<stars.length; i++){
+                    stars[i].classList.toggle('selected', i<starInput.value);
+                }
+            }
+
+            // モーダル閉じる（バツボタン/外クリック）
+            const modal = document.getElementById('reviewModal');
+            const closeBtn = document.querySelector('.modal-close');
+            closeBtn.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+            window.addEventListener('mousedown', function(e) {
+                if (!modal.classList.contains('hidden') && e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+        </script>
     </body>
 </html>
 

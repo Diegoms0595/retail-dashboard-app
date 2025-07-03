@@ -11,6 +11,9 @@ app.use(express.json());
 // Routing
 const orderRoute = require('./api/order');
 app.use('/api/order', orderRoute);
+const reviewRoute = require('./api/review');
+app.use('/api/review', reviewRoute);
+
 
 // Start server
 app.listen(PORT, () => {

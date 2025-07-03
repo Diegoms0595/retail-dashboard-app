@@ -111,9 +111,14 @@ fetch('data/reviews.json')
   buttonIcon.classList.add("fa-plus");
   addReviewButton.appendChild(buttonIcon);
   addReviewButton.addEventListener('click', () => {
+    const modal = document.getElementById('reviewModal');
+    if (modal) {
+      modal.classList.remove('hidden');
+    }
   });
 
   if (reviews && reviews.length > 0) {
+    reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
     const reviewAddCard = document.createElement('div');
     reviewAddCard.classList.add("review-add-card");
     reviewAddCard.appendChild(addReviewButton);
@@ -185,7 +190,9 @@ fetch('data/reviews.json')
     avrStarsDiv.appendChild(closeH2);
     
   } else {
-    document.getElementById('no-reviews').style.display = 'flex';
+    const noReviewDiv = document.getElementById('no-reviews');
+    noReviewDiv.style.display = 'flex';
+    noReviewDiv.appendChild(addReviewButton);
   }
 })
 .catch(err => {
@@ -240,3 +247,30 @@ document.getElementById("details-product-add-button").addEventListener("click", 
   localStorage.setItem("cart", JSON.stringify(cart));
   alert("Added to cart!");
 });
+
+const reviewForm = document.getElementById('reviewForm');
+if (reviewForm) {
+  reviewForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = reviewForm.elements['name'].value;
+    const stars = parseInt(reviewForm.elements['stars'].value, 10);
+    const comment = reviewForm.elements['comment'].value;
+    if (!name || !stars || !comment) {
+      alert('Please fill in all fields.');
+      return;
+    }
+    try {
+      const res = await fetch('api/review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId, name, stars, comment })
+      });
+      if (!res.ok) throw new Error('Failed to submit review');
+      alert('Your review has been submitted!');
+      document.getElementById('reviewModal').classList.add('hidden');
+      window.location.reload();
+    } catch (err) {
+      alert('Failed to send review: ' + err.message);
+    }
+  });
+}
